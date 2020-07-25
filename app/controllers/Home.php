@@ -6,9 +6,10 @@ class Home extends Controller
   {
     $data = [
       'judul' => 'Home',
+      'nama' => $this->model('UserModel')->getUser()
     ];
     $this->view('Templates/header', $data);
-    $this->view('Home/index');
+    $this->view('Home/index', $data);
     $this->view('Templates/footer');
   }
 }
