@@ -69,4 +69,16 @@ class Mahasiswa extends Controller
       exit;
     }
   }
+
+  public function cari()
+  {
+    $data = [
+      'judul' => 'Mahasiswa',
+      'mhs' => $this->model('MahasiswaModel')->getMahasiswa()
+    ];
+
+    $this->view('Templates/header', $data);
+    $this->view('Mahasiswa/index', $data);
+    $this->view('Templates/footer');
+  }
 }

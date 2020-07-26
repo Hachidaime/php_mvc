@@ -17,7 +17,11 @@ class MahasiswaModel
       return $this->db->single();
     }
 
-    $this->db->query("SELECT * FROM {$this->table}");
+    $query = "SELECT * FROM {$this->table}";
+    if (!empty($_POST['keyword'])) $query = "{$query} WHERE nama LIKE :keyword";
+    $this->db->query($query);
+    $this->db->bind('keyword', "%{$_POST['keyword']}%");
+
     return $this->db->resultSet();
   }
 
