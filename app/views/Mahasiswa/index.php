@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-lg-6">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+    <button type="button" class="btn btn-primary tambah" data-toggle="modal" data-target="#formModal">
       Tambah Data Mahasiswa
     </button>
     <br>
@@ -18,6 +18,7 @@
           <?= $mhs['nama']; ?>
           <span>
             <a href="<?= BASE_URL; ?>/Mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-info ">Info</a>
+            <a href="<?= BASE_URL; ?>/Mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-warning ubah" data-toggle="modal" data-target="#formModal" data-id="<?= $mhs['id']; ?>">Ubah</a>
             <a href="<?= BASE_URL; ?>/Mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger " onclick="return confirm('yakin?')">Hapus</a>
           </span>
         </li>
@@ -37,6 +38,7 @@
         </button>
       </div>
       <form action="<?= BASE_URL; ?>/Mahasiswa/tambah" method="POST">
+        <input type="hidden" id="id" name="id">
         <div class="modal-body">
           <div class="form-group">
             <label for="nama">Nama</label>

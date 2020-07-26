@@ -29,6 +29,24 @@ class MahasiswaModel
       (:nama, :nrp, :email, :jurusan)";
     $this->db->query($query);
     foreach ($data as $idx => $value) {
+      if ($idx == 'id') continue;
+      $this->db->bind($idx, $value);
+    }
+    $this->db->execute();
+
+    return $this->db->rowCount();
+  }
+
+  public function ubahData($data)
+  {
+    $query = "UPDATE {$this->table} SET
+      nama=:nama,
+      nrp=:nrp,
+      email=:email,
+      jurusan=:jurusan
+      WHERE id=:id";
+    $this->db->query($query);
+    foreach ($data as $idx => $value) {
       $this->db->bind($idx, $value);
     }
     $this->db->execute();
