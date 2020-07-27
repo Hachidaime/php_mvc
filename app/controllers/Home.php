@@ -1,7 +1,19 @@
 <?php
 
+/**
+ * @desc this class will handle Home controller
+ * 
+ * @class Home
+ * @extends Controller
+ * @author Hachidaime
+ */
 class Home extends Controller
 {
+  /**
+   * @desc this method will handle default Home page
+   * 
+   * @method index
+   */
   public function index()
   {
     $data = [

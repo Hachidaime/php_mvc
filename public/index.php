@@ -1,8 +1,13 @@
 <?php
+// Todo: check sesion_id
+// @ desc start session when no session_id
 if (!session_id()) session_start();
+
+// Todo: displaying error
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ERROR);
-require_once "../app/init.php";
 
+// Todo: call init php
+require_once "../app/init.php";
 $app = new App;

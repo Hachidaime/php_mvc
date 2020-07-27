@@ -1,7 +1,23 @@
 <?php
+
+/**
+ * @desc this class will handle flash data
+ * 
+ * @class Flasher
+ * @author Hachidaime
+ */
 class Flasher
 {
-  public static function setFlash($pesan, $aksi, $tipe)
+
+  /**
+   * @desc this method will handle set flash data
+   * 
+   * @method setFlash
+   * @param string $pesan is flash data message
+   * @param string $aksi is method action
+   * @param string $type is bootstrap alert type
+   */
+  public static function setFlash(string $pesan, string $aksi, string $tipe)
   {
     $_SESSION['flash'] = [
       'pesan' => $pesan,
@@ -10,6 +26,11 @@ class Flasher
     ];
   }
 
+  /**
+   * @desc this method will handle show flash data
+   * 
+   * @method flash
+   */
   public static function flash()
   {
     if (isset($_SESSION['flash'])) {

@@ -1,8 +1,23 @@
 <?php
 
+/**
+ * @desc this class will handle About controller
+ * 
+ * @class About
+ * @extends Controller
+ * @author Hachidaime
+ */
 class About extends Controller
 {
-  public function index($nama = 'Cold', $pekerjaan = 'Web Developer', $umur = 25)
+  /**
+   * @desc this method will handle default About page
+   * 
+   * @method index
+   * @param string $name is name
+   * @param string $pekerjaan is job
+   * @param int $umur is age
+   */
+  public function index(string $nama = 'Cold', string $pekerjaan = 'Web Developer', int $umur = 25)
   {
     $data = [
       'judul' => 'About',
@@ -15,6 +30,11 @@ class About extends Controller
     $this->view('Templates/footer');
   }
 
+  /**
+   * @desc this method will handle Page page
+   * 
+   * @method page
+   */
   public function page()
   {
     $data = [
